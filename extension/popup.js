@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded',function() {
 
 var testF = function() {
   console.log(findExtInput.value)
+    chrome.tabs.query({}, function (tabs) {
+        for (var i = 0; i < tabs.length; i++) {
+            chrome.tabs.executeScript(tabs[i].id, {file: "jquery-2.1.0.min.js"});
+            chrome.tabs.executeScript(tabs[i].id, {file: "content.js"});
+        }
+    });
 }
 
 findExtButton.addEventListener('click', testF);
