@@ -1,10 +1,8 @@
-function doContent(){
-    chrome.tabs.executeScript(null, {file: "content_nomsg.js"});
-};
+function zapisDoX() {
+    pesel = document.getElementById("pesel").value
+}
 
-function doTarget(){
-    chrome.tabs.executeScript(null, {file: "content2.js"});
-};
+function wklejDoMTU() {
+    document.getElementsByName("pesel")[0].value = pesel
+}
 
-document.getElementById("btnSource").onclick = doContent;
-document.getElementById("btnTarget").onclick = doTarget;

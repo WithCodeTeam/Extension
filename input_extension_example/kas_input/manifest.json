@@ -1,14 +1,15 @@
 {
-  "name": "MyWizard",
-  "version": "1.0",
+  "name": "Insurance Extensions",
+  "version": "0.1",
   "manifest_version": 2,
-  "description": "Scrape data to new form",
+  "description": "Najlepszy sposób na liczenie ubezpieczeń w kilku firmach! Powered by WithCode",
   "permissions": [
     "tabs", "<all_urls>",
-    "storage"
+    "storage",
+    "https://mw.mtu.pl/#/policy/step1"
   ],
   "browser_action": {
     "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_popup": "Popup.html"
   }
 }
