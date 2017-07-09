@@ -1,2 +1,2 @@
 document.body.style.backgroundColor = "red";
-document.getElementsByName('pesel')
+document.getElementsByName('pesel').setAttribute('value', 'Wojtek')
