@@ -12,6 +12,7 @@ var testF = function() {
   console.log(findExtInput.value)
     chrome.tabs.query({}, function (tabs) {
         for (var i = 0; i < tabs.length; i++) {
+            console.log(tabs[i].url)
 
             if (tabs[i].url === "https://mw.mtu.pl/#policy/step1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "content.js"});
