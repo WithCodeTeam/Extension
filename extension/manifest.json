@@ -6,7 +6,7 @@
   "version": "1.0",
   "background": {
     "persistent": false,
-    "scripts": ["jquery-2.1.0.min.js", "content.js"]
+    "scripts": ["content.js"]
   },
 
   "browser_action": {
