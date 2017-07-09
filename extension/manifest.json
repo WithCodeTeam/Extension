@@ -18,5 +18,12 @@
     "https://ajax.googleapis.com/",
     "tabs","<all urls>",
     "https://mw.mtu.pl/#/policy/step1"
-  ]
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mw.mtu.pl/#policy/step1"],
+      "js": ["content.js"]
+    }
+
+  ],
 }
