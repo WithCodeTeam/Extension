@@ -7,9 +7,9 @@ chrome.runtime.onMessage.addListener(
             "from the extension");
         var inputValue = request.inputValue
         sendResponse({response: "Received the message!"});
-        // document.getElementsByName('pesel')[0].value=inputValue
-        // document.getElementsByName('name')[0].value=inputValue
+        document.getElementsByName('pesel')[0].value=inputValue
+        document.getElementsByName('name')[0].value=inputValue
 
-        var findAllInputs = document.querySelectorAll('input')
-        findAllInputs.value = inputValue
+        // var findAllInputs = document.querySelectorAll('input')
+        // findAllInputs.value = inputValue
     });
