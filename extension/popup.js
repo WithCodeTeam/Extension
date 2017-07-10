@@ -15,7 +15,13 @@ var testF = function() {
             console.log(tabs[i].url)
 
             if (tabs[i].url === "https://mw.mtu.pl/#/policy/step1") {
-                chrome.tabs.executeScript(tabs[i].id, {file: "content.js"});
+                chrome.tabs.executeScript(tabs[i].id, {file: "mtu.js"});
+                chrome.tabs.sendMessage(tabs[i].id, {inputValue: findExtInput.value}, function(response) {
+                    console.log(response.response);
+                })
+            }
+            if (tabs[i].url === "https://gonet.pl/SalesUX.aspx#!/komunikacja1") {
+                chrome.tabs.executeScript(tabs[i].id, {file: "gothaer.js"});
                 chrome.tabs.sendMessage(tabs[i].id, {inputValue: findExtInput.value}, function(response) {
                     console.log(response.response);
                 })

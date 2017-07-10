@@ -1,4 +1,4 @@
-document.body.style.backgroundColor = "green";
+document.body.style.backgroundColor = "silver";
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {

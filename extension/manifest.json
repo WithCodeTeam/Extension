@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
-  "version": "1.0",
+  "name": "Insurance Extension",
+  "description": "Najlepsza porownywarka ubezpieczeń",
+  "version": "0.1",
   "background": {
     "persistent": false,
-    "scripts": ["content.js"]
+    "scripts": ["mtu.js", "gothaer.js"]
   },
 
   "browser_action": {
@@ -17,13 +17,14 @@
     "activeTab",
     "https://ajax.googleapis.com/",
     "tabs","<all urls>",
-    "https://mw.mtu.pl/#/policy/step1"
+    "https://mw.mtu.pl/#/policy/step1",
+    "https://gonet.pl/SalesUX.aspx#!/komunikacja1"
   ],
   "content_scripts": [
     {
       "matches": ["https://mw.mtu.pl/#policy/step1"],
-      "js": ["content.js"]
+      "js": ["mtu.js"]
     }
 
-  ],
+  ]
 }
