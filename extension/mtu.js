@@ -5,7 +5,9 @@ chrome.runtime.onMessage.addListener(
         console.log(sender.tab ?
             "from a content script:" + sender.tab.url :
             "from the extension");
-        var inputValue = request.inputValue
+        var nameValue = request.nameValue
+        var surnameValue = request.surnameValue
+        var peselValue = request.peselValue
         var kilometersValue = request.kilometersValue
         var kilometersActive
 
@@ -22,8 +24,9 @@ chrome.runtime.onMessage.addListener(
 
 
         sendResponse({response: "Received the message!"});
-        document.getElementsByName('pesel')[0].value=inputValue
-        document.getElementsByName('name')[0].value=inputValue
+        document.getElementsByName('pesel')[0].value=peselValue
+        document.getElementsByName('name')[0].value=nameValue
+        document.getElementsByName('name')[0].value=surnameValue
         document.getElementsByName('milage')[0].value=kilometersActive
 
         // var findAllInputs = document.querySelectorAll('input')
