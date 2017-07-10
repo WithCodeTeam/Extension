@@ -1,5 +1,3 @@
-document.body.style.backgroundColor = "silver";
-
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         console.log(sender.tab ?
@@ -9,6 +7,7 @@ chrome.runtime.onMessage.addListener(
         var surnameValue = request.surnameValue
         var peselValue = request.peselValue
         var kilometersValue = request.kilometersValue
+        var zipValue = request.zipCodeValue
         var kilometersActive
 
         if (kilometersValue < 50001 )
@@ -28,6 +27,7 @@ chrome.runtime.onMessage.addListener(
         document.getElementsByName('name')[0].value=nameValue
         document.getElementsByName('surname')[0].value=surnameValue
         document.getElementsByName('milage')[0].value=kilometersActive
+        document.getElementsByName('personMainAddressZip')[0].value=zipValue
 
         // var findAllInputs = document.querySelectorAll('input')
         // findAllInputs.value = inputValue

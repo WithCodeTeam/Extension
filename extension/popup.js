@@ -3,6 +3,7 @@ var NameInput = document.getElementById('NameCalc')
 var kilometersInput = document.getElementById('kilometers')
 var peselInput = document.getElementById('PeselCalc')
 var surnameInput = document.getElementById('SurnameCalc')
+var zipcodeInput = document.getElementById('ZipCodeCalc')
 function updateInput(event) {
     NameInput.setAttribute("value", event.target.value)
 }
@@ -18,7 +19,7 @@ var testF = function() {
 
             if (tabs[i].url === "https://mw.mtu.pl/#/policy/step1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "mtu.js"});
-                chrome.tabs.sendMessage(tabs[i].id, {peselValue: peselInput.value  , surnameValue: surnameInput.value, kilometersValue: kilometersInput.value  , nameValue: NameInput.value}, function(response) {
+                chrome.tabs.sendMessage(tabs[i].id, {zipCodeValue: zipcodeInput.value, peselValue: peselInput.value, surnameValue: surnameInput.value, kilometersValue: kilometersInput.value, nameValue: NameInput.value}, function(response) {
                     console.log(response.response);
                 })
             }
