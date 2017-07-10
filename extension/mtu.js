@@ -8,7 +8,9 @@ chrome.runtime.onMessage.addListener(
         var peselValue = request.peselValue
         var kilometersValue = request.kilometersValue
         var zipValue = request.zipCodeValue
+        var licenseValue = request.licenseDateValue
         var kilometersActive
+        var licenseActive
 
         if (kilometersValue < 50001 )
         {kilometersActive = 25000}
@@ -20,6 +22,8 @@ chrome.runtime.onMessage.addListener(
         {kilometersActive = 175000}
         else
         {kilometersActive = 225000}
+
+        if (licenseValue)
 
 
         sendResponse({response: "Received the message!"});
