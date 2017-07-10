@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Getting started example",
+  "description": "This extension shows a Google Image search result for the current page",
+  "version": "1.0",
+  "background": {
+    "persistent": false,
+    "scripts": ["content.js"]
+  },
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "tabs","<all urls>",
+    "https://mw.mtu.pl/#/policy/step1"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mw.mtu.pl/#policy/step1"],
+      "js": ["content.js"]
+    }
+
+  ],
+}
