@@ -9,14 +9,17 @@ chrome.runtime.onMessage.addListener(
         var kilometersValue = request.kilometersValue
         var kilometersActive
 
-        switch (kilometersValue < 150001 ) {
-            case true:
-                    kilometersActive = 125000;
-                    break;
-            case false:
-                    kilometersActive = 175000
-                    break;
-        }
+        if (kilometersValue < 50001 )
+        {kilometersActive = 25000}
+        else if (50001 <= kilometersValue && kilometersValue < 100001 )
+        {kilometersActive = 75000}
+        else if (100001 <= kilometersValue && kilometersValue  < 150001)
+        {kilometersActive = 125000}
+        else if (150001 <= kilometersValue && kilometersValue  < 200001)
+        {kilometersActive = 175000}
+        else
+        {kilometersActive = 225000}
+
 
         sendResponse({response: "Received the message!"});
         document.getElementsByName('pesel')[0].value=inputValue
