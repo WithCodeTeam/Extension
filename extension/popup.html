@@ -31,18 +31,32 @@
   </head>
   <body>
     <div id="status"></div>
-    <div>
+    <div style="display: flex">
+        <div style="padding: 15px">
       <p>Imie:</p>
       <input id="NameCalc" type="text"/>
+        </div>
+        <div style="padding: 15px">
       <p>Nazwisko:</p>
       <input id="SurnameCalc" type="text"/>
+        </div>
+    </div>
+      <div style="display: flex">
+        <div style="padding: 15px">
       <p>Pesel:</p>
       <input id="PeselCalc" type="text"/>
+        </div>
+        <div style="padding: 15px">
       <p>Kod pocztowy:</p>
       <input id="ZipCodeCalc" placeholder="__-___" type="text"/>
+        </div>
+      </div>
+    <div style="text-align: center">
       <p>Podaj Przebieg:</p>
       <input id="kilometers" type="number"/>
-      <button id="extButton">Send</button>
+    </div>
+      <div style="text-align: center; margin: 10px;">
+      <button style="padding: 10px" id="extButton">Przelicz</button>
     </div>
     <img id="image-result" hidden>
     <script src="popup.js"></script>
