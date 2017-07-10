@@ -4,15 +4,14 @@ var kilometersInput = document.getElementById('kilometers')
 var peselInput = document.getElementById('PeselCalc')
 var surnameInput = document.getElementById('SurnameCalc')
 function updateInput(event) {
-  findExtInput.setAttribute("value", event.target.value)
+    NameInput.setAttribute("value", event.target.value)
 }
 
 document.addEventListener('DOMContentLoaded',function() {
-    findExtInput.onchange = updateInput;
+    NameInput.onchange = updateInput;
 },false);
 
 var testF = function() {
-  console.log(findExtInput.value)
     chrome.tabs.query({}, function (tabs) {
         for (var i = 0; i < tabs.length; i++) {
             console.log(tabs[i].url)

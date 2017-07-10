@@ -26,7 +26,7 @@ chrome.runtime.onMessage.addListener(
         sendResponse({response: "Received the message!"});
         document.getElementsByName('pesel')[0].value=peselValue
         document.getElementsByName('name')[0].value=nameValue
-        document.getElementsByName('name')[0].value=surnameValue
+        document.getElementsByName('surname')[0].value=surnameValue
         document.getElementsByName('milage')[0].value=kilometersActive
 
         // var findAllInputs = document.querySelectorAll('input')
