@@ -14,7 +14,7 @@ var testF = function() {
         for (var i = 0; i < tabs.length; i++) {
             console.log(tabs[i].url)
 
-            if (tabs[i].url === "https://mw.mtu.pl/#policy/step1") {
+            if (tabs[i].url === "https://mw.mtu.pl/#/policy/step1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "content.js"});
                 chrome.tabs.sendMessage(tabs[i].id, {inputValue: findExtInput.value}, function(response) {
                     console.log(response.response);
