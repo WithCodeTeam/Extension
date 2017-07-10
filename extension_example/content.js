@@ -1,4 +1,4 @@
 /**
  * Created by user on 09.07.17.
  */
-document.body.style.backgroundColor = "red";
+alert("Hello from your Chrome extension!")
