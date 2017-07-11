@@ -5,22 +5,36 @@ var peselInput = document.getElementById('PeselCalc')
 var surnameInput = document.getElementById('SurnameCalc')
 var zipcodeInput = document.getElementById('ZipCodeCalc')
 var licenseInput = document.getElementById('licenseDate')
-function updateInput(event) {
+
+function updateNameInput(event) {
     NameInput.setAttribute("value", event.target.value)
+}
+function updateKmInput(event) {
+    kilometersInput.setAttribute("value", event.target.value)
+}
+function updatePeselInput(event) {
+    peselInput.setAttribute("value", event.target.value)
+}
+function updateSurnameInput(event) {
+    surnameInput.setAttribute("value", event.target.value)
+}
+function updateZipcodeInput(event) {
+    zipcodeInput.setAttribute("value", event.target.value)
+}
+function updateLicenseInput(event) {
+    licenseInput.setAttribute("value", event.target.value)
 }
 
 document.addEventListener('DOMContentLoaded',function() {
-    NameInput.onchange = updateInput;
+    NameInput.onchange = updateNameInput;
+    kilometersInput.onchange = updateKmInput;
+    peselInput.onchange = updatePeselInput;
+    surnameInput.onchange = updateSurnameInput;
+    zipcodeInput.onchange = updateZipcodeInput;
+    licenseInput.onchange = updateLicenseInput;
 },false);
 
 var testF = function() {
-
-    sessionStorage.setItem('name', NameInput.value)
-    sessionStorage.setItem('km', kilometersInput.value)
-    sessionStorage.setItem('pesel', peselInput.value)
-    sessionStorage.setItem('surname', surnameInput.value)
-    sessionStorage.setItem('zipcode', zipcodeInput.value)
-    sessionStorage.setItem('license', licenseInput.value)
 
     chrome.tabs.query({}, function (tabs) {
         for (var i = 0; i < tabs.length; i++) {
