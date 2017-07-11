@@ -23,8 +23,6 @@ chrome.runtime.onMessage.addListener(
         else
         {kilometersActive = 225000}
 
-        if (licenseValue)
-
 
         sendResponse({response: "Received the message!"});
         document.getElementsByName('pesel')[0].value=peselValue
