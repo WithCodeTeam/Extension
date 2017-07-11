@@ -14,6 +14,14 @@ document.addEventListener('DOMContentLoaded',function() {
 },false);
 
 var testF = function() {
+
+    sessionStorage.setItem('name', NameInput.value)
+    sessionStorage.setItem('km', kilometersInput.value)
+    sessionStorage.setItem('pesel', peselInput.value)
+    sessionStorage.setItem('surname', surnameInput.value)
+    sessionStorage.setItem('zipcode', zipcodeInput.value)
+    sessionStorage.setItem('license', licenseInput.value)
+
     chrome.tabs.query({}, function (tabs) {
         for (var i = 0; i < tabs.length; i++) {
             console.log(tabs[i].url)
