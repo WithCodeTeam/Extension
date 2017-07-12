@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded',function() {
     peselInput.addEventListener('keydown', updatePeselInput)
     surnameInput.addEventListener('keydown', updateSurnameInput)
     zipcodeInput.addEventListener('keydown', updateZipcodeInput)
-    licenseInput.addEventListener('keydown', updateLicenseInput)
+    licenseInput.addEventListener('change', updateLicenseInput)
 },false);
 
 var testF = function() {
