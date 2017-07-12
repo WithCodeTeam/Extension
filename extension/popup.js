@@ -8,30 +8,36 @@ var licenseInput = document.getElementById('licenseDate')
 
 function updateNameInput(event) {
     NameInput.setAttribute("value", event.target.value)
+    localStorage.setItem('name', event.target.value)
 }
 function updateKmInput(event) {
     kilometersInput.setAttribute("value", event.target.value)
+    localStorage.setItem('km', event.target.value)
 }
 function updatePeselInput(event) {
     peselInput.setAttribute("value", event.target.value)
+    localStorage.setItem('pesel', event.target.value)
 }
 function updateSurnameInput(event) {
     surnameInput.setAttribute("value", event.target.value)
+    localStorage.setItem('surname', event.target.value)
 }
 function updateZipcodeInput(event) {
     zipcodeInput.setAttribute("value", event.target.value)
+    localStorage.setItem('zipcode', event.target.value)
 }
 function updateLicenseInput(event) {
     licenseInput.setAttribute("value", event.target.value)
+    localStorage.setItem('license', event.target.value)
 }
 
 document.addEventListener('DOMContentLoaded',function() {
-    NameInput.onchange = updateNameInput;
-    kilometersInput.onchange = updateKmInput;
-    peselInput.onchange = updatePeselInput;
-    surnameInput.onchange = updateSurnameInput;
-    zipcodeInput.onchange = updateZipcodeInput;
-    licenseInput.onchange = updateLicenseInput;
+    NameInput.addEventListener('keydown', updateNameInput)
+    kilometersInput.addEventListener('keydown', updateKmInput)
+    peselInput.addEventListener('keydown', updatePeselInput)
+    surnameInput.addEventListener('keydown', updateSurnameInput)
+    zipcodeInput.addEventListener('keydown', updateZipcodeInput)
+    licenseInput.addEventListener('keydown', updateLicenseInput)
 },false);
 
 var testF = function() {
