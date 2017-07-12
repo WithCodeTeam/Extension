@@ -65,4 +65,22 @@ var testF = function() {
     });
 }
 
+function getStorageData() {
+    var name = localStorage.getItem('name')
+    var km = localStorage.getItem('km')
+    var pesel = localStorage.getItem('pesel')
+    var surname = localStorage.getItem('surname')
+    var zipcode = localStorage.getItem('zipcode')
+    var license = localStorage.getItem('license')
+
+    NameInput.value = name
+    kilometersInput.value = km
+    peselInput.value = pesel
+    surnameInput.value = surname
+    zipcodeInput.value = zipcode
+    licenseInput.value = license
+}
+
+getStorageData()
+
 findExtButton.addEventListener('click', testF);
