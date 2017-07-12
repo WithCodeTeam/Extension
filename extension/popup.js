@@ -1,3 +1,8 @@
+
+var loginInput = document.getElementById('loginInput')
+var passwordInput = document.getElementById('passwordInput')
+
+
 var findExtButton = document.getElementById('extButton')
 var findExtInput = document.getElementById('extInput')
 function updateInput(event) {
