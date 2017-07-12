@@ -1,16 +1,16 @@
 var findExtButton = document.getElementById('extButton')
-var NameInput = document.getElementById('NameCalc')
+var nameInput = document.getElementById('nameCalc')
 var kilometersInput = document.getElementById('kilometers')
-var peselInput = document.getElementById('PeselCalc')
-var surnameInput = document.getElementById('SurnameCalc')
-var zipcodeInput = document.getElementById('ZipCodeCalc')
+var peselInput = document.getElementById('peselCalc')
+var surnameInput = document.getElementById('surnameCalc')
+var zipcodeInput = document.getElementById('zipCodeCalc')
 var licenseInput = document.getElementById('licenseDate')
 function updateInput(event) {
-    NameInput.setAttribute("value", event.target.value)
+    nameInput.setAttribute("value", event.target.value)
 }
 
 document.addEventListener('DOMContentLoaded',function() {
-    NameInput.onchange = updateInput;
+    nameInput.onchange = updateInput;
 },false);
 
 var testF = function() {
@@ -20,13 +20,22 @@ var testF = function() {
 
             if (tabs[i].url === "https://mw.mtu.pl/#/policy/step1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "mtu.js"});
-                chrome.tabs.sendMessage(tabs[i].id, {licenseDateValue: licenseInput.value, zipCodeValue: zipcodeInput.value, peselValue: peselInput.value, surnameValue: surnameInput.value, kilometersValue: kilometersInput.value, nameValue: NameInput.value}, function(response) {
+                chrome.tabs.sendMessage(tabs[i].id, {
+                    licenseDateValue: licenseInput.value,
+                    zipCodeValue: zipcodeInput.value,
+                    peselValue: peselInput.value,
+                    surnameValue: surnameInput.value,
+                    kilometersValue: kilometersInput.value,
+                    nameValue: nameInput.value
+                }, function(response) {
                     console.log(response.response);
                 })
             }
             if (tabs[i].url === "https://gonet.pl/SalesUX.aspx#!/komunikacja1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "gothaer.js"});
-                chrome.tabs.sendMessage(tabs[i].id, {inputValue: findExtInput.value}, function(response) {
+                chrome.tabs.sendMessage(tabs[i].id, {
+                    nameValue: nameInput.value
+                }, function(response) {
                     console.log(response.response);
                 })
             }
