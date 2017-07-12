@@ -1,5 +1,5 @@
 var findExtButton = document.getElementById('extButton')
-var NameInput = document.getElementById('NameCalc')
+var nameInput = document.getElementById('NameCalc')
 var kilometersInput = document.getElementById('kilometers')
 var peselInput = document.getElementById('PeselCalc')
 var surnameInput = document.getElementById('SurnameCalc')
@@ -7,7 +7,7 @@ var zipcodeInput = document.getElementById('ZipCodeCalc')
 var licenseInput = document.getElementById('licenseDate')
 
 function updateNameInput(event) {
-    NameInput.setAttribute("value", event.target.value)
+    nameInput.setAttribute("value", event.target.value)
     localStorage.setItem('name', event.target.value)
 }
 function updateKmInput(event) {
@@ -32,7 +32,7 @@ function updateLicenseInput(event) {
 }
 
 document.addEventListener('DOMContentLoaded',function() {
-    NameInput.addEventListener('keydown', updateNameInput)
+    nameInput.addEventListener('keydown', updateNameInput)
     kilometersInput.addEventListener('keydown', updateKmInput)
     peselInput.addEventListener('keydown', updatePeselInput)
     surnameInput.addEventListener('keydown', updateSurnameInput)
@@ -51,7 +51,7 @@ var testF = function() {
 
             if (tabs[i].url === "https://mw.mtu.pl/#/policy/step1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "mtu.js"});
-                chrome.tabs.sendMessage(tabs[i].id, {licenseDateValue: licenseInput.value, zipCodeValue: zipcodeInput.value, peselValue: peselInput.value, surnameValue: surnameInput.value, kilometersValue: kilometersInput.value, nameValue: NameInput.value}, function(response) {
+                chrome.tabs.sendMessage(tabs[i].id, {licenseDateValue: licenseInput.value, zipCodeValue: zipcodeInput.value, peselValue: peselInput.value, surnameValue: surnameInput.value, kilometersValue: kilometersInput.value, nameValue: nameInput.value}, function(response) {
                     console.log(response.response);
                 })
             }
@@ -74,7 +74,7 @@ function getStorageData() {
     var zipcode = localStorage.getItem('zipcode')
     var license = localStorage.getItem('license')
 
-    NameInput.value = name
+    nameInput.value = name
     kilometersInput.value = km
     peselInput.value = pesel
     surnameInput.value = surname
