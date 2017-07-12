@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded',function() {
 var testF = function() {
 
     localStorage.clear()
+    clearAllInputs()
 
     chrome.tabs.query({}, function (tabs) {
         for (var i = 0; i < tabs.length; i++) {
@@ -79,6 +80,19 @@ function getStorageData() {
     surnameInput.value = surname
     zipcodeInput.value = zipcode
     licenseInput.value = license
+}
+
+function clearAllInputs() {
+    var selectAllInputs = document.getElementsByTagName('input')
+
+    for (i = 0; i < selectAllInputs.length; i++) {
+        if (selectAllInputs[i].type == 'text' || selectAllInputs[i].type == 'number') {
+            selectAllInputs[i].value = ''
+        }
+        if (selectAllInputs[i].type == 'date') {
+            selectAllInputs[i].valueAsDate = null
+        }
+    }
 }
 
 getStorageData()
