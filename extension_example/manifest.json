@@ -1,32 +1,28 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "My extension",
+  "name": "Google translate",
+  "description": "By selecting text translate it into every language",
   "version": "1.0",
-//  "content_scripts": [
-//    {
-//      "matches": [
-//        "<all_urls>"
-//      ],
-//      "js": ["jquery-2.1.3.min.js","content.js"]
-//    }
-//  ],
-//  "background": {
-//    "scripts":["background.js"]
-//  } ,
 
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "index.html"
+    "default_icon": "icon.png"
+  },
 
+  "background" : {
+    "scripts":["background.js"]
+  },
+
+  "icons": {
+    "128" : "translate_icon.png",
+    "64" : "translate_icon.png",
+    "32" : "translate_icon.png",
+    "16" : "translate_icon.png"
   },
 
   "permissions": [
-//    "activeTab",
-//    "https://ajax.googleapis.com/",
+    "activeTab",
     "tabs",
-"storage",
-    "notifications"
+    "contextMenu"
   ]
 }
