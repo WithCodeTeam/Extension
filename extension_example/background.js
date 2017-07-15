@@ -1,10 +1,11 @@
+
 chrome.contextMenus.create({
    title:"Google Translate",
-    contextType:["selection"],
-    onClicked:myFunction
+    contexts:["selection"],
+    onclick: translate
 
 });
 
-function myFunction()  {
-    alert("You just clicked")
+function translate()  {
+
 }
