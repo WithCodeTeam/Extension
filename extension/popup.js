@@ -1,6 +1,6 @@
 
 var loginInput = document.getElementById('loginInput')
-var passwordInput = document.getElementById('passwordInput')
+var passwordInput = document.getElementById('passwordInput')git
 
 
 var findExtButton = document.getElementById('extButton')
