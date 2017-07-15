@@ -6,6 +6,6 @@ chrome.contextMenus.create({
 
 });
 
-function translate()  {
-
+function translate(text)  {
+    chrome.tabs.create({url:'https://translate.google.pl/?hl=ang#en/pl/'+text.selectionText})
 }
