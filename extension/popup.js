@@ -1,12 +1,30 @@
 
+
+var handleLoginChecking = firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    // handle erros
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+});
+
+
+
+
 var loginInput = document.getElementById('loginInput')
 var passwordInput = document.getElementById('passwordInput')
 
 
+
+loginInButton.onclick(handleLoginChecking)
+
+
+
+var setValueOfInput = setAttribute("value", event.target.value)
+
 var findExtButton = document.getElementById('extButton')
 var findExtInput = document.getElementById('extInput')
 function updateInput(event) {
-  findExtInput.setAttribute("value", event.target.value)
+  findExtInput.setValueOfInput
 }
 
 document.addEventListener('DOMContentLoaded',function() {
