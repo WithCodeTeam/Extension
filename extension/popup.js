@@ -1,6 +1,4 @@
-
-
-var handleLoginChecking = firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+var handleLoginChecking = firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
     // handle erros
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -8,44 +6,54 @@ var handleLoginChecking = firebase.auth().signInWithEmailAndPassword(email, pass
 });
 
 
-
-
 var loginInput = document.getElementById('loginInput')
 var passwordInput = document.getElementById('passwordInput')
-
+var loginButton = document.getElementById('logInButton')
 
 
 loginInButton.onclick(handleLoginChecking)
 
 
-
 var setValueOfInput = setAttribute("value", event.target.value)
+
 
 var findExtButton = document.getElementById('extButton')
 var findExtInput = document.getElementById('extInput')
-function updateInput(event) {
-  findExtInput.setValueOfInput
+
+
+function handleLogin(event) {
+    loginInput.setAttribute('value', event.target.value)
+}
+function handlePassword(event) {
+    passwordInput.setAttribute('value', event.target.value)
 }
 
-document.addEventListener('DOMContentLoaded',function() {
-    findExtInput.onchange = updateInput;
-},false);
 
-var testF = function() {
-  console.log(findExtInput.value)
+function updateInput(event) {
+    findExtInput.setAttribute('value', event.target.value)
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    findExtInput.onchange = updateInput;
+    loginInput.onchange = handleLogin;
+    passwordInput.onchange = handlePassword;
+}, false);
+
+var testF = function () {
+    console.log(findExtInput.value)
     chrome.tabs.query({}, function (tabs) {
         for (var i = 0; i < tabs.length; i++) {
             console.log(tabs[i].url)
 
             if (tabs[i].url === "https://mw.mtu.pl/#/policy/step1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "mtu.js"});
-                chrome.tabs.sendMessage(tabs[i].id, {inputValue: findExtInput.value}, function(response) {
+                chrome.tabs.sendMessage(tabs[i].id, {inputValue: findExtInput.value}, function (response) {
                     console.log(response.response);
                 })
             }
             if (tabs[i].url === "https://gonet.pl/SalesUX.aspx#!/komunikacja1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "gothaer.js"});
-                chrome.tabs.sendMessage(tabs[i].id, {inputValue: findExtInput.value}, function(response) {
+                chrome.tabs.sendMessage(tabs[i].id, {inputValue: findExtInput.value}, function (response) {
                     console.log(response.response);
                 })
             }
