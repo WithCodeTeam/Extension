@@ -15,12 +15,12 @@ chrome.runtime.onMessage.addListener(
 
         var brandMtu = document.getElementsByName('etxBrand')[0].options
 
-        chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
-            console.log(brandMtu);
-        });
+        // chrome.tabs.sendMessage({greeting: "hello"}, function(response) {
+        //     console.log(brandMtu);
+        // });
 
 
-        sendResponse({response: "Received the message!"});
+        sendResponse({response: brandMtu});
         document.getElementsByName('pesel')[0].value=peselValue
         document.getElementsByName('name')[0].value=nameValue
         document.getElementsByName('surname')[0].value=surnameValue
