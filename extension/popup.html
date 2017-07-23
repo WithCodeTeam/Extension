@@ -31,12 +31,58 @@
   </head>
   <body>
     <div id="status"></div>
-    <div>
-      <input id="extInput" type="text"/>
-      <button id="extButton">Send</button>
+    <div style="display: flex">
+        <div style="padding: 15px">
+      <p>Imie:</p>
+      <input id="nameCalc" type="text"/>
+        </div>
+        <div style="padding: 15px">
+      <p>Nazwisko:</p>
+      <input id="surnameCalc" type="text"/>
+        </div>
+    </div>
+      <div style="display: flex">
+        <div style="padding: 15px">
+      <p>Pesel:</p>
+      <input id="peselCalc" type="text"/>
+        </div>
+        <div style="padding: 15px">
+      <p>Kod pocztowy:</p>
+      <input id="zipCodeCalc" placeholder="__-___" type="text"/>
+        </div>
+      </div>
+    <div style="display: flex">
+      <div style="padding: 15px">
+      <p>Podaj Przebieg:</p>
+      <input id="kilometers" type="number"/>
+      </div>
+      <div style="padding: 15px">
+      <p>Data prawa jazdy:</p>
+      <input id="licenseDate" placeholder="__-__-____" type="date"/>
+      </div>
+    </div>
+
+      <div style="text-align: center; margin: 10px;">
+      <button style="padding: 10px" id="extButton">Przelicz</button>
     </div>
     <img id="image-result" hidden>
     <script src="popup.js"></script>
   </body>
+
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyAK-45XRJUqCpWzPc7ykGJ7RhJKJLLwb9g",
+          authDomain: "withcodeextension.firebaseapp.com",
+          databaseURL: "https://withcodeextension.firebaseio.com",
+          projectId: "withcodeextension",
+          storageBucket: "withcodeextension.appspot.com",
+          messagingSenderId: "866243409771"
+      };
+      firebase.initializeApp(config);
+  </script>
+
+
 </html>
 
