@@ -5,7 +5,7 @@
   "description": "Najlepsza porownywarka ubezpieczeń",
   "version": "0.1",
   "background": {
-    "persistent": false,
+    "persistent": true,
     "scripts": ["mtu.js", "gothaer.js"]
   },
 
@@ -14,7 +14,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "activeTab",
+    "activeTab,background",
     "https://ajax.googleapis.com/",
     "tabs","<all urls>",
     "https://mw.mtu.pl/#/policy/step1",

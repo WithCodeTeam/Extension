@@ -5,6 +5,17 @@ var peselInput = document.getElementById('peselCalc')
 var surnameInput = document.getElementById('surnameCalc')
 var zipcodeInput = document.getElementById('zipCodeCalc')
 var licenseInput = document.getElementById('licenseDate')
+
+// var brandSelect= document.getElementById('brand')
+//
+// brandSelect.appendChild(brandMtu)
+
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        console.log(brandMtu);
+        if (request.greeting == "hello")
+            sendResponse({farewell: "goodbye"});
+    });
 function updateInput(event) {
     nameInput.setAttribute("value", event.target.value)
 }
@@ -26,7 +37,7 @@ var testF = function() {
                     peselValue: peselInput.value,
                     surnameValue: surnameInput.value,
                     kilometersValue: kilometersInput.value,
-                    nameValue: nameInput.value
+                    nameValue: nameInput.value,
                 }, function(response) {
                     console.log(response.response);
                 })
