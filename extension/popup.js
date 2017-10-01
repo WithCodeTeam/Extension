@@ -50,6 +50,7 @@ var testF = function() {
                     nameValue: nameInput.value,
                     carNrValue: carNrInput.value,
                     kilometersValue: kilometersInput.value,
+                    bornDateValue: bornDateInput.value
                 }, function(response) {
                     console.log(response.response);
                 })
@@ -63,6 +64,7 @@ var testF = function() {
                     kilometersValue: kilometersInput.value,
                     zipCodeValue: zipcodeInput.value,
                     carNrValue: carNrInput.value,
+                    bornDateValue: bornDateInput.value
                 }, function(response) {
                     console.log(response.response);
                 })

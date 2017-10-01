@@ -9,6 +9,7 @@ chrome.runtime.onMessage.addListener(
         var kilometersValue = request.kilometersValue
         var zipValue = request.zipCodeValue
         var carNrValue = request.carNrValue
+        var bornDateValue = request.bornDateValue
         sendResponse({response: "Received the message!"});
         document.getElementById('owner-firstName').value=nameValue
         document.getElementById('owner-lastName').value=surnameValue
@@ -16,6 +17,7 @@ chrome.runtime.onMessage.addListener(
         document.getElementById('mileage').value=kilometersValue
         document.getElementById('owner-postcode').value=zipValue
         document.getElementById('registrationNumber').value=carNrValue
+        document.getElementById('firstRegistrationDateInput').value=bornDateValue
 
         // var findAllInputs = document.querySelectorAll('input')
         // findAllInputs.value = inputValue
