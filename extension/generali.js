@@ -8,12 +8,14 @@ chrome.runtime.onMessage.addListener(
         var peselValue = request.peselValue
         var kilometersValue = request.kilometersValue
         var zipValue = request.zipCodeValue
+        var carNrValue = request.carNrValue
         sendResponse({response: "Received the message!"});
         document.getElementById('owner-firstName').value=nameValue
         document.getElementById('owner-lastName').value=surnameValue
         document.getElementById('owner-pesel').value=peselValue
         document.getElementById('mileage').value=kilometersValue
         document.getElementById('owner-postcode').value=zipValue
+        document.getElementById('registrationNumber').value=carNrValue
 
         // var findAllInputs = document.querySelectorAll('input')
         // findAllInputs.value = inputValue

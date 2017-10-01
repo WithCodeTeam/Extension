@@ -48,6 +48,7 @@ var testF = function() {
                 chrome.tabs.executeScript(tabs[i].id, {file: "gothaer.js"});
                 chrome.tabs.sendMessage(tabs[i].id, {
                     nameValue: nameInput.value
+                    carNrValue: carNrInput.value,
                 }, function(response) {
                     console.log(response.response);
                 })
@@ -60,6 +61,7 @@ var testF = function() {
                     peselValue: peselInput.value,
                     kilometersValue: kilometersInput.value,
                     zipCodeValue: zipcodeInput.value,
+                    carNrValue: carNrInput.value,
                 }, function(response) {
                     console.log(response.response);
                 })
