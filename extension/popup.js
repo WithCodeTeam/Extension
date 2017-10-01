@@ -49,12 +49,26 @@ var testF = function() {
                 chrome.tabs.sendMessage(tabs[i].id, {
                     nameValue: nameInput.value,
                     carNrValue: carNrInput.value,
+                    kilometersValue: kilometersInput.value,
                 }, function(response) {
                     console.log(response.response);
                 })
             }
             if (tabs[i].url === "https://portal.generali.pl/frontend/agencynl?execution=e1s1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "generali.js"});
+                chrome.tabs.sendMessage(tabs[i].id, {
+                    nameValue: nameInput.value,
+                    surnameValue: surnameInput.value,
+                    peselValue: peselInput.value,
+                    kilometersValue: kilometersInput.value,
+                    zipCodeValue: zipcodeInput.value,
+                    carNrValue: carNrInput.value,
+                }, function(response) {
+                    console.log(response.response);
+                })
+            }
+            if (tabs[i].url === "https://rubinet.concordiaubezpieczenia.pl/concordia/frontend/Application.html#policies/policy?137") {
+                chrome.tabs.executeScript(tabs[i].id, {file: "concordia.js"});
                 chrome.tabs.sendMessage(tabs[i].id, {
                     nameValue: nameInput.value,
                     surnameValue: surnameInput.value,

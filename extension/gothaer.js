@@ -3,10 +3,11 @@ chrome.runtime.onMessage.addListener(
         console.log(sender.tab ?
             "from a content script:" + sender.tab.url :
             "from the extension");
-        var nameValue = request.nameValue
+        var kilometersValue = request.kilometersValue
+        var carNrValue = request.carNrValue
         sendResponse({response: "Received the message!"});
-        document.getElementById('vehicleRegistrationNumberId').value=nameValue
-        document.getElementById('vehicleMilageValueId').value=15
+        document.getElementById('vehicleRegistrationNumberId').value=carNrValue
+        document.getElementById('vehicleMilageValueId').value=kilometersValue
 
         // var findAllInputs = document.querySelectorAll('input')
         // findAllInputs.value = inputValue

@@ -18,7 +18,8 @@
     "tabs",
     "https://mw.mtu.pl/#/policy/step1",
     "https://gonet.pl/SalesUX.aspx#!/komunikacja1",
-    "https://portal.generali.pl/frontend/agencynl?execution=e1s1"
+    "https://portal.generali.pl/frontend/agencynl?execution=e1s1",
+    "https://rubinet.concordiaubezpieczenia.pl/concordia/frontend/Application.html#policies/policy?137"
   ],
   "content_scripts": [
     {
