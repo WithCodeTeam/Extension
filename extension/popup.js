@@ -47,7 +47,7 @@ var testF = function() {
             if (tabs[i].url === "https://gonet.pl/SalesUX.aspx#!/komunikacja1") {
                 chrome.tabs.executeScript(tabs[i].id, {file: "gothaer.js"});
                 chrome.tabs.sendMessage(tabs[i].id, {
-                    nameValue: nameInput.value
+                    nameValue: nameInput.value,
                     carNrValue: carNrInput.value,
                 }, function(response) {
                     console.log(response.response);
