@@ -6,7 +6,7 @@
   "version": "0.1",
   "background": {
     "persistent": true,
-    "scripts": ["mtu.js", "gothaer.js"]
+    "scripts": ["mtu.js", "gothaer.js", "generali.js"]
   },
 
   "browser_action": {
@@ -14,11 +14,11 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "activeTab,background",
     "https://ajax.googleapis.com/",
-    "tabs","<all urls>",
+    "tabs",
     "https://mw.mtu.pl/#/policy/step1",
-    "https://gonet.pl/SalesUX.aspx#!/komunikacja1"
+    "https://gonet.pl/SalesUX.aspx#!/komunikacja1",
+    "https://portal.generali.pl/frontend/agencynl?execution=e1s1"
   ],
   "content_scripts": [
     {

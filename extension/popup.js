@@ -5,6 +5,8 @@ var peselInput = document.getElementById('peselCalc')
 var surnameInput = document.getElementById('surnameCalc')
 var zipcodeInput = document.getElementById('zipCodeCalc')
 var licenseInput = document.getElementById('licenseDate')
+var carNrInput = document.getElementById('carNr')
+var bornDateInput = document.getElementById('bornDate')
 
 // var brandSelect= document.getElementById('brand')
 //
@@ -46,6 +48,18 @@ var testF = function() {
                 chrome.tabs.executeScript(tabs[i].id, {file: "gothaer.js"});
                 chrome.tabs.sendMessage(tabs[i].id, {
                     nameValue: nameInput.value
+                }, function(response) {
+                    console.log(response.response);
+                })
+            }
+            if (tabs[i].url === "https://portal.generali.pl/frontend/agencynl?execution=e1s1") {
+                chrome.tabs.executeScript(tabs[i].id, {file: "generali.js"});
+                chrome.tabs.sendMessage(tabs[i].id, {
+                    nameValue: nameInput.value,
+                    surnameValue: surnameInput.value,
+                    peselValue: peselInput.value,
+                    kilometersValue: kilometersInput.value,
+                    zipCodeValue: zipcodeInput.value,
                 }, function(response) {
                     console.log(response.response);
                 })

@@ -6,7 +6,7 @@ chrome.runtime.onMessage.addListener(
         var nameValue = request.nameValue
         sendResponse({response: "Received the message!"});
         document.getElementById('vehicleRegistrationNumberId').value=nameValue
-        document.getElementById('vehicleMileageNextYearId').value=15
+        document.getElementById('vehicleMilageValueId').value=15
 
         // var findAllInputs = document.querySelectorAll('input')
         // findAllInputs.value = inputValue
