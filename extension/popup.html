@@ -19,6 +19,20 @@
         overflow: hidden;
         max-width: 400px;
       }
+
+      .labelki {
+        margin: 0;
+      }
+
+      .fleks {
+        display: flex;
+        padding: 10px;
+      }
+
+      .fleks div {
+        padding: 5px;
+      }
+
     </style>
 
     <!--
@@ -31,50 +45,44 @@
   </head>
   <body>
     <div id="status"></div>
-    <div style="display: flex">
-        <div style="padding: 15px">
-      <p>Imie:</p>
+    <div class="fleks">
+        <div>
+      <p class="labelki">Imie:</p>
       <input id="nameCalc" type="text"/>
         </div>
-        <div style="padding: 15px">
-      <p>Nazwisko:</p>
+        <div>
+      <p class="labelki">Nazwisko:</p>
       <input id="surnameCalc" type="text"/>
         </div>
     </div>
-      <div style="display: flex">
-        <div style="padding: 15px">
-      <p>Pesel:</p>
+      <div class="fleks">
+        <div>
+      <p class="labelki">Pesel:</p>
       <input id="peselCalc" type="text"/>
         </div>
-        <div style="padding: 15px">
-      <p>Kod pocztowy:</p>
+        <div>
+      <p class="labelki">Kod pocztowy:</p>
       <input id="zipCodeCalc" placeholder="__-___" type="text"/>
         </div>
       </div>
-    <div style="display: flex">
-      <div style="padding: 15px">
-      <p>Podaj Przebieg:</p>
+    <div class="fleks">
+      <div>
+      <p class="labelki">Podaj Przebieg:</p>
       <input id="kilometers" type="number"/>
       </div>
-      <div style="padding: 15px">
-      <p>Data prawa jazdy:</p>
+      <div>
+      <p class="labelki">Data prawa jazdy:</p>
       <input id="licenseDate" placeholder="__-__-____" type="date"/>
       </div>
     </div>
-    <div style="display: flex">
-      <div style="padding: 15px">
-      <p>Nr rejestracyjny:</p>
+    <div class="fleks">
+      <div>
+      <p class="labelki">Nr rejestracyjny:</p>
       <input id="carNr" type="text"/>
       </div>
-      <div style="padding: 15px">
-      <p>Data pierwszej rejestracji:</p>
+      <div>
+      <p class="labelki">Data 1 rejestracji:</p>
       <input id="bornDate" placeholder="__-__-____" type="date"/>
-      </div>
-    </div>
-    <div style="display: flex">
-      <div style="padding: 15px">
-      <p>Marka:</p>
-        <select id="brand" type="text"></select>
       </div>
     </div>
 
